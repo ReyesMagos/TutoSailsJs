@@ -15,7 +15,7 @@ module.exports = {
   		defaultsTo:'John'
   	}, 
 
-  	last_name:{
+  	lastname:{
   		type:'string',
   		required:true,
   		defaultsTo:'Doe'
@@ -29,8 +29,6 @@ module.exports = {
   	email:{
   		type:'email',
   		required:true
-
-
   	}
 
 
