@@ -1,0 +1,24 @@
+<div class="container">
+	<h2>Usuarios Registrados</h2>
+	<table class="table table-hover" >
+		<th>Nombre</th>
+		<th>Apellido</th>
+		<th colspan="2" class="text-center">Acciones</th>
+		<% _.each(users, function(user) { %>
+		<tr>
+			<td><%=user.name%></td>
+			<td><%=user.lastname%></td>
+			<td>
+				<a href="/user/show/<%=user.id%>" class="btn btn-success btn-sm ">Ver Detalles</a>
+			</td>
+			<td>
+				<form action="/user/destroy/<%= user.id%>" method="POST" accept-charset="utf-8">
+					<input type="hidden" name="_method" value="delete"/>
+					<input type="submit"  class="btn btn-sm btn-danger" value="Eliminar"/>
+					<input type="hidden" name="_csrf" value="<%= _csrf %>"/>
+				</form>
+			</td>
+		</tr>
+		<%})%>
+	</table>
+</div>
